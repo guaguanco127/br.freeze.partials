@@ -139,3 +139,7 @@ Open _br.freeze.partials.example.1.1.maxpat (keep it in the same folder as the a
 ## <a name="sigmund"></a>sigmund~
 
 br.freeze.partials uses **sigmund~** (sinusoidal analysis and pitch tracking) by **Miller Puckette**, with 32-bit Max ports by Ted Apel, Barry Threw and David Zicarelli, 64-bit Max ports by Volker Böhm, and the Mac (Intel + Apple Silicon) and Windows builds from Isabel Kaspriskie's [mp-objects](https://github.com/isabelgk/mp-objects) package. It is included here under its Standard Improved BSD License (sigmund~ LICENSE.txt). See sigmund~ CREDITS.md for details. If you already have sigmund~ installed, Max may warn about two copies; it still works, and you can delete the one in this folder.
+
+## <a name="Credits"></a>Credits
+
+Partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, "Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan.

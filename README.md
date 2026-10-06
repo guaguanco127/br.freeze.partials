@@ -57,3 +57,11 @@ The example patch (_br.freeze.partials.example.1.1.maxpat) has a stereo mic inpu
 ## <a name="Version"></a>Version History  
 Version 1.1: stereo, crossfade, attack detect, Dry/Wet, Insert/Gate, squared Levels, Max for Live device.  
 Version 1.0: first release (mono abstraction).
+
+## <a name="Credits"></a>Credits
+
+Partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, "Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan.
+
+## <a name="Credits"></a>Credits
+
+Partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, "Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan.
