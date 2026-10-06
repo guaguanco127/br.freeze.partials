@@ -1,8 +1,5 @@
-# Max/MSP Abstractions:   
-## br.freeze.partials.1.1
-
-
-
+# Ableton Max for Live device: br.freeze.partials.1.1  
+   
 By Brian Riordan  
 [guaguanco127@gmail.com](mailto:guaguanco127@gmail.com)  
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
@@ -16,13 +13,11 @@ These files were created with Max 9.
 ## Table of Contents 
 
 [What's New in 1.1](#whats-new-in-11)  
-[About](#About)   
-[What is an abstraction?](#Abstraction)  
+[About](#About)  
+[What is a Max for Live Device?](#M4L)  
 [How To Install](#Install)  
-[How To Use](#Use)  
-[Example Patch](#Example)  
 [sigmund~](#sigmund)  
- 
+
 ## What's New in 1.1
 
 - **Stereo.** Each side has its own analysis and its own 16 voices, so a stereo source freezes a slightly different chord left and right. For a mono source, connect it to both inputs.
@@ -65,77 +60,38 @@ br.freeze.partials listens to a stereo sound, finds the strongest partials (the 
 
 **Dry/Wet:** 0 to 100 %. Equal-power, so the middle does not dip. The default is 100 % (wet only).
 
-**Levels:** 16 levels, 0 to 1, one per voice, lowest partial first, applied to both sides and through crossfades. The curve is squared, so half the bar is -12 dB and the bottom of the bar reaches silence. Changes take 50 ms. Every voice starts at 1.
+**Levels:** The multislider at the bottom of the device: 16 levels, 0 to 1, one per voice, lowest partial first, applied to both sides and through crossfades. The curve is squared, so half the bar is -12 dB and the bottom of the bar reaches silence. Changes take 50 ms. Every voice starts at 1.
 
 **Built in:** each voice has a slow random amplitude wobble, so a frozen chord breathes instead of sounding static. Voices pitched below 20 Hz or above 12 kHz fade out.
 
-## <a name="Abstraction"></a>What is an Abstraction?
+Every control is a Live parameter (automatable and saved with your set), except Levels, which is saved with your set and presets but is not automatable. Hover over a control to see its range and default in Live's Info View.
 
-An abstraction is a subpatcher that is saved as an external file, and can be used just like a standard Max object. As long as your abstraction can be found in the Max file path, you can type its name into a new object box and it will be loaded directly into your patch.  
+## <a name="M4L"></a>What Is a Max For Live Device?
 
-By saving your logic in an abstraction, you can create modules that can be used in future work with little or no additional programming. This allows you to parlay your Max knowledge into more efficient work in the future, and will help you create programming systems that are modular and easier to maintain.
+Max For Live brings the power and flexibility of Max to Ableton Live. Max For Live gives you access to hundreds of exclusive custom plug-ins (Live Devices) as well as the tools to build your own. These can be MIDI and audio effects, audio and video synthesizers, 3D Jitter visuals, as well as tools that interact with the Live application itself, via the Live API.
 
-## <a name="Install"></a>How To Install 
+## <a name="Install"></a>How To Install
 
-1. Make sure you have Max 9 installed in your computer. And, make sure you are using a Max patch that is inside of a folder.  
+1. Make sure you have the Ableton Live Suite installed in your computer. Make sure Ableton is turned off while installing. 
 
-2. Copy and paste ALL of the files in this folder inside of the same folder as the Max patch you are using. br.freeze.partials needs all of them:
-   - br.freeze.partials.1.1.maxpat (the abstraction)
-   - br.freeze.partials.engine.1.1.maxpat (one side's engine, used twice)
-   - br.freeze.partials.voice.1.1.maxpat (one voice)
-   - br.freeze.partials.sort.1.1.js (sorts the partials, applies the Threshold and the crossfade)
-   - sigmund~.mxo (Mac) and sigmund~.mxe64 (Windows), with sigmund~ LICENSE.txt
+2. For Macintosh:  
+Go to your user folder  
+Then Music > Ableton > User Library > Presets > Audio Effects > Max Audio Effect  
+Copy and paste br.freeze.partials.1.1.amxd into that folder
 
-3. To use the built-in controls, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the abstraction located within the same folder as your project. Size the bpatcher to 340 x 84 to show all of the controls.
+3. For Windows: \Users\[username]\Documents\Ableton\User Library\Presets\Audio Effects\Max Audio Effect  
 
-4. Alternatively, create an object with the abstraction's name ([br.freeze.partials.1.1], do not include brackets) and control it through its inlets (see below).
+4. Also copy ALL of the other files from this folder into the same folder: br.freeze.partials.engine.1.1.maxpat, br.freeze.partials.voice.1.1.maxpat, br.freeze.partials.sort.1.1.js, sigmund~.mxo (Mac), sigmund~.mxe64 (Windows) and sigmund~ LICENSE.txt. **The device will not work without them.**    
+  
+5. Open Ableton Live. On the left-hand side, look for Max for Live > Max Audio Effect and then the name of this device.
 
-**Mac:** a downloaded external may be blocked the first time it loads. If Max says it can't load sigmund~, allow it in System Settings > Privacy & Security, then restart Max.
+6. Either double click on the device, or drag/drop it onto the track where you wish to use it.
 
-**Updating from 1.0:** 1.1 is stereo and has new inlets, so re-connect anything that was patched into 1.0.
-
-## <a name="Use"></a>How To Use
-
-Every control has its own inlet. Sending a value to an inlet moves its on-screen control too, so the display always matches the sound. Hover over an inlet or outlet in Max to see its range and default.
-
-| Inlet | Control | Type | Range | Default |
-|---|---|---|---|---|
-| 1 | Left In | Signal | audio (for mono, connect it to Left and Right) | |
-| 2 | Right In | Signal | audio | |
-| 3 | Freeze | Bang | ignored during a crossfade | |
-| 4 | Pitch | Float | -36 - 36 semitones | 0 |
-| 5 | Hi-Pass (input) | Float | 20 - 20000 Hz | 40 |
-| 6 | Lo-Pass (output) | Float | 100 - 20000 Hz | 20000 |
-| 7 | Drive | Float | 1 - 16 | 1 |
-| 8 | Crossfade | Float | 0 - 10000 ms | 0 |
-| 9 | Sensitivity | Float | 0 - 1 | 0.5 |
-| 10 | Dry/Wet | Float | 0 - 100 % | 100 |
-| 11 | Threshold | Float | -100 - 0 dB | -60 |
-| 12 | On/Off | Int | 0 / 1 (1 also freezes right away) | 1 |
-| 13 | Detect | Int | 0 / 1 | 0 |
-| 14 | Mode | Int | 0 = Insert, 1 = Gate | 1 |
-| 15 | Levels | List | 16 floats, 0 - 1, lowest partial first | all 1 |
-
-| Outlet | Name | Type |
-|---|---|---|
-| 1 | Left Out | Signal |
-| 2 | Right Out | Signal |
-
-**Ideas:**
-- Hold a note on trumpet or voice, Freeze, then play over the drone.
-- Turn on Detect with a long X-Fade: the drone follows each note you play, morphing slowly.
-- Shape the Levels: only the low partials for an organ-like bed, only the high ones for a shimmer, every other one for a hollow sound.
-- Pitch 12 or -12 for an octave drone; raise Drive slowly for a growling, buzzing chord.
-
-## <a name="Example"></a>Example Patch
-
-Open _br.freeze.partials.example.1.1.maxpat (keep it in the same folder as the abstraction). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
-
-- **Source:** the demo tone (a saw at 110 Hz on the left and 165 Hz on the right) is on when the patch opens; turn on the mic / line in 1 + 2 toggle to use your own sound.
-- **Freeze:** click Freeze on the panel, then try X-Fade, Detect, Pitch, Drive, Thresh and Dry/Wet.
-- **Levels:** draw on the multislider to set the level of each partial, lowest on the left.
-- **CPU:** switch Freeze.Partials off and watch the CPU readout drop to about 0.
+**Mac:** a downloaded external may be blocked the first time it loads. If the device says it can't load sigmund~, allow it in System Settings > Privacy & Security, then restart Live.
 
 ## <a name="sigmund"></a>sigmund~
 
 br.freeze.partials uses **sigmund~** (sinusoidal analysis and pitch tracking) by **Miller Puckette**, with 32-bit Max ports by Ted Apel, Barry Threw and David Zicarelli, 64-bit Max ports by Volker Böhm, and the Mac (Intel + Apple Silicon) and Windows builds from Isabel Kaspriskie's [mp-objects](https://github.com/isabelgk/mp-objects) package. It is included here under its Standard Improved BSD License (sigmund~ LICENSE.txt). See sigmund~ CREDITS.md for details. If you already have sigmund~ installed, Max may warn about two copies; it still works, and you can delete the one in this folder.
+
+## <a name="Version"></a>Version History  
+Version 1.1: first Max for Live release (stereo, crossfade, attack detect, Dry/Wet, Insert/Gate, Levels).

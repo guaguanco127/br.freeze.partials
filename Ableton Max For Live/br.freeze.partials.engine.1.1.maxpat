@@ -9,19 +9,12 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "openrect": [
-            85.0,
-            104.0,
-            208.0,
-            77.0
-        ],
         "openrectmode": 0,
-        "openinpresentation": 1,
-        "devicewidth": 208.0,
+        "openinpresentation": 0,
         "boxes": [
             {
                 "box": {
-                    "comment": "Signal In: mono audio",
+                    "comment": "Signal In: one side (L or R)",
                     "id": "obj-1",
                     "index": 1,
                     "maxclass": "inlet",
@@ -40,7 +33,7 @@
             },
             {
                 "box": {
-                    "comment": "Freeze: bang captures the partials sounding now",
+                    "comment": "Freeze: bang",
                     "id": "obj-2",
                     "index": 2,
                     "maxclass": "inlet",
@@ -59,7 +52,7 @@
             },
             {
                 "box": {
-                    "comment": "Pitch: float, -36 - 36 semitones, default 0",
+                    "comment": "Pitch: semitones",
                     "id": "obj-3",
                     "index": 3,
                     "maxclass": "inlet",
@@ -78,7 +71,7 @@
             },
             {
                 "box": {
-                    "comment": "Mix: list of 16 floats 0 - 1 (voices low -> high partial), default all 1. Connect your own multislider here",
+                    "comment": "Levels: list of 16 floats 0 - 1",
                     "id": "obj-4",
                     "index": 9,
                     "maxclass": "inlet",
@@ -97,7 +90,7 @@
             },
             {
                 "box": {
-                    "comment": "Drive (fold amount): float, 1 - 16, default 1",
+                    "comment": "Drive: 1 - 16",
                     "id": "obj-5",
                     "index": 6,
                     "maxclass": "inlet",
@@ -116,7 +109,7 @@
             },
             {
                 "box": {
-                    "comment": "Lo-Pass (output): float, 100 - 20000 Hz, default 20000",
+                    "comment": "Lo-Pass (output): Hz",
                     "id": "obj-6",
                     "index": 5,
                     "maxclass": "inlet",
@@ -135,7 +128,7 @@
             },
             {
                 "box": {
-                    "comment": "On/Off: int 0 / 1, default 1. 0 = everything off (no CPU)",
+                    "comment": "On/Off: 0 / 1",
                     "id": "obj-7",
                     "index": 8,
                     "maxclass": "inlet",
@@ -154,7 +147,7 @@
             },
             {
                 "box": {
-                    "comment": "Threshold: float, -100 - 0 dB, default -60. Quieter partials never get a voice",
+                    "comment": "Threshold: dB",
                     "id": "obj-8",
                     "index": 7,
                     "maxclass": "inlet",
@@ -169,409 +162,6 @@
                         30.0,
                         30.0
                     ]
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-9",
-                    "maxclass": "live.button",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [
-                        ""
-                    ],
-                    "parameter_enable": 1,
-                    "patching_rect": [
-                        120.0,
-                        60.0,
-                        15.0,
-                        15.0
-                    ],
-                    "presentation": 1,
-                    "presentation_rect": [
-                        5.0,
-                        32.0,
-                        39.0,
-                        34.0
-                    ],
-                    "saved_attribute_attributes": {
-                        "valueof": {
-                            "parameter_enum": [
-                                "off",
-                                "on"
-                            ],
-                            "parameter_longname": "Partials-Freeze",
-                            "parameter_mmax": 1,
-                            "parameter_modmode": 0,
-                            "parameter_shortname": "Freeze",
-                            "parameter_type": 2
-                        }
-                    },
-                    "varname": "partials-freeze"
-                }
-            },
-            {
-                "box": {
-                    "fontsize": 12.0,
-                    "id": "obj-10",
-                    "maxclass": "live.numbox",
-                    "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [
-                        "",
-                        "float"
-                    ],
-                    "parameter_enable": 1,
-                    "patching_rect": [
-                        210.0,
-                        60.0,
-                        53.0,
-                        18.0
-                    ],
-                    "presentation": 1,
-                    "presentation_rect": [
-                        95.0,
-                        23.0,
-                        53.0,
-                        18.0
-                    ],
-                    "saved_attribute_attributes": {
-                        "valueof": {
-                            "parameter_initial": [
-                                0
-                            ],
-                            "parameter_initial_enable": 1,
-                            "parameter_longname": "Partials-Pitch",
-                            "parameter_mmax": 36.0,
-                            "parameter_mmin": -36.0,
-                            "parameter_modmode": 0,
-                            "parameter_shortname": "Pitch",
-                            "parameter_type": 0,
-                            "parameter_unitstyle": 1
-                        }
-                    },
-                    "varname": "partials-pitch"
-                }
-            },
-            {
-                "box": {
-                    "fontsize": 12.0,
-                    "id": "obj-11",
-                    "maxclass": "live.numbox",
-                    "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [
-                        "",
-                        "float"
-                    ],
-                    "parameter_enable": 1,
-                    "patching_rect": [
-                        300.0,
-                        60.0,
-                        53.0,
-                        18.0
-                    ],
-                    "presentation": 1,
-                    "presentation_rect": [
-                        95.0,
-                        41.0,
-                        53.0,
-                        18.0
-                    ],
-                    "saved_attribute_attributes": {
-                        "valueof": {
-                            "parameter_initial": [
-                                40
-                            ],
-                            "parameter_initial_enable": 1,
-                            "parameter_longname": "Partials-HiPass",
-                            "parameter_mmax": 20000.0,
-                            "parameter_mmin": 20.0,
-                            "parameter_modmode": 0,
-                            "parameter_shortname": "Hi-Pass",
-                            "parameter_type": 0,
-                            "parameter_unitstyle": 3
-                        }
-                    },
-                    "varname": "partials-hipass"
-                }
-            },
-            {
-                "box": {
-                    "fontsize": 12.0,
-                    "id": "obj-12",
-                    "maxclass": "live.numbox",
-                    "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [
-                        "",
-                        "float"
-                    ],
-                    "parameter_enable": 1,
-                    "patching_rect": [
-                        390.0,
-                        60.0,
-                        53.0,
-                        18.0
-                    ],
-                    "presentation": 1,
-                    "presentation_rect": [
-                        95.0,
-                        59.0,
-                        53.0,
-                        18.0
-                    ],
-                    "saved_attribute_attributes": {
-                        "valueof": {
-                            "parameter_initial": [
-                                20000
-                            ],
-                            "parameter_initial_enable": 1,
-                            "parameter_longname": "Partials-LoPass",
-                            "parameter_mmax": 20000.0,
-                            "parameter_mmin": 100.0,
-                            "parameter_modmode": 0,
-                            "parameter_shortname": "Lo-Pass",
-                            "parameter_type": 0,
-                            "parameter_unitstyle": 3
-                        }
-                    },
-                    "varname": "partials-lopass"
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-13",
-                    "maxclass": "comment",
-                    "numinlets": 1,
-                    "numoutlets": 0,
-                    "patching_rect": [
-                        900.0,
-                        20.0,
-                        150.0,
-                        20.0
-                    ],
-                    "presentation": 1,
-                    "presentation_rect": [
-                        48.0,
-                        22.0,
-                        46.0,
-                        20.0
-                    ],
-                    "text": "Pitch",
-                    "textcolor": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-14",
-                    "maxclass": "comment",
-                    "numinlets": 1,
-                    "numoutlets": 0,
-                    "patching_rect": [
-                        900.0,
-                        45.0,
-                        150.0,
-                        20.0
-                    ],
-                    "presentation": 1,
-                    "presentation_rect": [
-                        48.0,
-                        40.0,
-                        52.0,
-                        20.0
-                    ],
-                    "text": "Hi-Pass",
-                    "textcolor": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                }
-            },
-            {
-                "box": {
-                    "fontname": "Arial",
-                    "fontsize": 12.0,
-                    "id": "obj-16",
-                    "maxclass": "comment",
-                    "numinlets": 1,
-                    "numoutlets": 0,
-                    "patching_rect": [
-                        900.0,
-                        95.0,
-                        60.0,
-                        20.0
-                    ],
-                    "presentation": 1,
-                    "presentation_rect": [
-                        48.0,
-                        58.0,
-                        53.0,
-                        20.0
-                    ],
-                    "text": "Lo-Pass",
-                    "textcolor": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
-                }
-            },
-            {
-                "box": {
-                    "activeneedlecolor": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "id": "obj-17",
-                    "maxclass": "live.dial",
-                    "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [
-                        "",
-                        "float"
-                    ],
-                    "parameter_enable": 1,
-                    "patching_rect": [
-                        480.0,
-                        60.0,
-                        44.0,
-                        48.0
-                    ],
-                    "presentation": 1,
-                    "presentation_rect": [
-                        153.0,
-                        25.0,
-                        44.0,
-                        48.0
-                    ],
-                    "saved_attribute_attributes": {
-                        "activeneedlecolor": {
-                            "expression": ""
-                        },
-                        "textcolor": {
-                            "expression": ""
-                        },
-                        "valueof": {
-                            "parameter_exponent": 2.0,
-                            "parameter_initial": [
-                                1.0
-                            ],
-                            "parameter_initial_enable": 1,
-                            "parameter_longname": "Partials-Drive",
-                            "parameter_mmax": 16.0,
-                            "parameter_mmin": 1.0,
-                            "parameter_modmode": 0,
-                            "parameter_shortname": "Drive",
-                            "parameter_type": 0,
-                            "parameter_unitstyle": 1
-                        }
-                    },
-                    "textcolor": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "varname": "partials-drive"
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-19",
-                    "maxclass": "live.text",
-                    "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [
-                        "",
-                        ""
-                    ],
-                    "parameter_enable": 1,
-                    "patching_rect": [
-                        660.0,
-                        60.0,
-                        50.0,
-                        15.0
-                    ],
-                    "presentation": 1,
-                    "presentation_rect": [
-                        5.0,
-                        5.0,
-                        93.0,
-                        15.0
-                    ],
-                    "saved_attribute_attributes": {
-                        "valueof": {
-                            "parameter_enum": [
-                                "off",
-                                "on"
-                            ],
-                            "parameter_initial": [
-                                1
-                            ],
-                            "parameter_initial_enable": 1,
-                            "parameter_longname": "Partials-OnOff",
-                            "parameter_mmax": 1,
-                            "parameter_modmode": 0,
-                            "parameter_shortname": "On",
-                            "parameter_type": 2
-                        }
-                    },
-                    "text": "Freeze.Partials",
-                    "texton": "Freeze.Partials",
-                    "varname": "partials-on"
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-21",
-                    "maxclass": "live.numbox",
-                    "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [
-                        "",
-                        "float"
-                    ],
-                    "parameter_enable": 1,
-                    "patching_rect": [
-                        570.0,
-                        60.0,
-                        50.0,
-                        15.0
-                    ],
-                    "presentation": 1,
-                    "presentation_rect": [
-                        150.0,
-                        5.0,
-                        50.0,
-                        15.0
-                    ],
-                    "saved_attribute_attributes": {
-                        "valueof": {
-                            "parameter_initial": [
-                                -60
-                            ],
-                            "parameter_initial_enable": 1,
-                            "parameter_longname": "Partials-Thresh",
-                            "parameter_mmax": 0.0,
-                            "parameter_mmin": -100.0,
-                            "parameter_modmode": 0,
-                            "parameter_shortname": "Thresh",
-                            "parameter_type": 0,
-                            "parameter_unitstyle": 4
-                        }
-                    },
-                    "varname": "partials-thresh"
                 }
             },
             {
@@ -710,7 +300,7 @@
                     "patching_rect": [
                         660.0,
                         225.0,
-                        121.0,
+                        135.0,
                         22.0
                     ],
                     "text": "trigger b b b b"
@@ -753,7 +343,7 @@
                         184.0,
                         22.0
                     ],
-                    "text": "target 0, track 0. 0. -1"
+                    "text": "target 0, fadetime 20, track 0. 0. -1"
                 }
             },
             {
@@ -832,7 +422,7 @@
                     "patching_rect": [
                         860.0,
                         225.0,
-                        107.0,
+                        121.0,
                         22.0
                     ],
                     "text": "trigger b b b"
@@ -978,7 +568,7 @@
             },
             {
                 "box": {
-                    "comment": "Signal Out: mono audio",
+                    "comment": "Signal Out",
                     "id": "obj-42",
                     "index": 1,
                     "maxclass": "outlet",
@@ -1256,7 +846,7 @@
                             },
                             {
                                 "box": {
-                                    "filename": "br.freeze.partials.sort.1.0.js",
+                                    "filename": "br.freeze.partials.sort.1.1.js",
                                     "fontname": "Arial",
                                     "fontsize": 12.0,
                                     "id": "obj-13",
@@ -1276,9 +866,9 @@
                                     "saved_object_attributes": {
                                         "parameter_enable": 0
                                     },
-                                    "text": "v8 br.freeze.partials.sort.1.0.js",
+                                    "text": "v8 br.freeze.partials.sort.1.1.js",
                                     "textfile": {
-                                        "filename": "br.freeze.partials.sort.1.0.js",
+                                        "filename": "br.freeze.partials.sort.1.1.js",
                                         "flags": 0,
                                         "embed": 0,
                                         "autowatch": 1
@@ -1324,7 +914,7 @@
                                         268.0,
                                         22.0
                                     ],
-                                    "text": "mute $1 0, target $1, track $2 $3 $4"
+                                    "text": "mute $1 0, target $1, fadetime $5, track $2 $3 $4"
                                 }
                             },
                             {
@@ -1344,7 +934,7 @@
                                         191.0,
                                         22.0
                                     ],
-                                    "text": "target $1, track 0. 0. -1"
+                                    "text": "target $1, fadetime $2, track 0. 0. -1"
                                 }
                             },
                             {
@@ -1425,7 +1015,7 @@
                                         300.0,
                                         49.0
                                     ],
-                                    "text": "mute 0 0, mute 1 1, mute 2 1, mute 3 1, mute 4 1, mute 5 1, mute 6 1, mute 7 1, mute 8 1, mute 9 1, mute 10 1, mute 11 1, mute 12 1, mute 13 1, mute 14 1, mute 15 1, mute 16 1"
+                                    "text": "mute 0 0, mute 1 1, mute 2 1, mute 3 1, mute 4 1, mute 5 1, mute 6 1, mute 7 1, mute 8 1, mute 9 1, mute 10 1, mute 11 1, mute 12 1, mute 13 1, mute 14 1, mute 15 1, mute 16 1, mute 17 1, mute 18 1, mute 19 1, mute 20 1, mute 21 1, mute 22 1, mute 23 1, mute 24 1, mute 25 1, mute 26 1, mute 27 1, mute 28 1, mute 29 1, mute 30 1, mute 31 1, mute 32 1"
                                 }
                             },
                             {
@@ -1445,7 +1035,7 @@
                                         233.0,
                                         22.0
                                     ],
-                                    "text": "poly~ br.freeze.partials.voice.1.0 16"
+                                    "text": "poly~ br.freeze.partials.voice.1.1 32"
                                 }
                             },
                             {
@@ -1902,7 +1492,7 @@
             },
             {
                 "box": {
-                    "comment": "Hi-Pass (input): float, 20 - 20000 Hz, default 40",
+                    "comment": "Hi-Pass (input): Hz",
                     "id": "obj-50",
                     "index": 4,
                     "maxclass": "inlet",
@@ -1941,66 +1531,57 @@
             },
             {
                 "box": {
-                    "id": "obj-46",
-                    "maxclass": "comment",
-                    "numinlets": 1,
-                    "numoutlets": 0,
+                    "maxclass": "inlet",
+                    "id": "obj-90",
+                    "numinlets": 0,
+                    "numoutlets": 1,
+                    "outlettype": [
+                        ""
+                    ],
                     "patching_rect": [
-                        900.0,
-                        120.0,
-                        60.0,
-                        20.0
+                        840.0,
+                        20.0,
+                        30.0,
+                        30.0
                     ],
-                    "presentation": 1,
-                    "presentation_rect": [
-                        98.5,
-                        2.5,
-                        46.0,
-                        20.0
-                    ],
-                    "text": "Thresh",
-                    "textcolor": [
-                        1.0,
-                        1.0,
-                        1.0,
-                        1.0
-                    ]
+                    "comment": "Crossfade: float, 0 - 10000 ms"
                 }
             },
             {
                 "box": {
-                    "background": 1,
-                    "bgcolor": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
+                    "maxclass": "message",
+                    "id": "obj-91",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [
+                        ""
                     ],
-                    "bordercolor": [
-                        0.0,
-                        0.0,
-                        0.0,
-                        1.0
+                    "patching_rect": [
+                        840.0,
+                        100.0,
+                        72.0,
+                        22.0
                     ],
-                    "id": "obj-panel",
-                    "maxclass": "panel",
-                    "mode": 0,
+                    "text": "xfade $1",
+                    "fontname": "Arial",
+                    "fontsize": 12.0
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "comment",
+                    "id": "obj-92",
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [
-                        900.0,
-                        200.0,
-                        128.0,
-                        128.0
+                        30.0,
+                        580.0,
+                        700.0,
+                        33.0
                     ],
-                    "presentation": 1,
-                    "presentation_rect": [
-                        0.0,
-                        0.0,
-                        212.0,
-                        84.0
-                    ],
-                    "rounded": 7
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "text": "br.freeze.partials engine 1.1: one side (no panel). Used twice by br.freeze.partials.1.1 (L and R). poly~ 32 = two banks of 16 voices; the sorter alternates banks for crossfades."
                 }
             }
         ],
@@ -2019,84 +1600,72 @@
             },
             {
                 "patchline": {
+                    "source": [
+                        "obj-3",
+                        0
+                    ],
                     "destination": [
                         "obj-22",
                         0
-                    ],
-                    "source": [
-                        "obj-10",
-                        0
                     ]
                 }
             },
             {
                 "patchline": {
+                    "source": [
+                        "obj-50",
+                        0
+                    ],
                     "destination": [
                         "obj-43",
                         1
-                    ],
-                    "source": [
-                        "obj-11",
-                        0
                     ]
                 }
             },
             {
                 "patchline": {
+                    "source": [
+                        "obj-6",
+                        0
+                    ],
                     "destination": [
                         "obj-43",
                         5
-                    ],
-                    "source": [
-                        "obj-12",
-                        0
                     ]
                 }
             },
             {
                 "patchline": {
+                    "source": [
+                        "obj-5",
+                        0
+                    ],
                     "destination": [
                         "obj-24",
                         0
-                    ],
-                    "source": [
-                        "obj-17",
-                        0
                     ]
                 }
             },
             {
                 "patchline": {
+                    "source": [
+                        "obj-7",
+                        0
+                    ],
                     "destination": [
                         "obj-27",
                         0
-                    ],
-                    "source": [
-                        "obj-19",
-                        0
                     ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [
-                        "obj-9",
+                    "source": [
+                        "obj-8",
                         0
                     ],
-                    "source": [
-                        "obj-2",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
                     "destination": [
                         "obj-25",
-                        0
-                    ],
-                    "source": [
-                        "obj-21",
                         0
                     ]
                 }
@@ -2229,18 +1798,6 @@
                     ],
                     "source": [
                         "obj-29",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [
-                        "obj-10",
-                        0
-                    ],
-                    "source": [
-                        "obj-3",
                         0
                     ]
                 }
@@ -2439,73 +1996,37 @@
             },
             {
                 "patchline": {
-                    "destination": [
-                        "obj-17",
+                    "source": [
+                        "obj-2",
                         0
                     ],
-                    "source": [
-                        "obj-5",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [
-                        "obj-11",
-                        0
-                    ],
-                    "source": [
-                        "obj-50",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [
-                        "obj-12",
-                        0
-                    ],
-                    "source": [
-                        "obj-6",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [
-                        "obj-19",
-                        0
-                    ],
-                    "source": [
-                        "obj-7",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [
-                        "obj-21",
-                        0
-                    ],
-                    "source": [
-                        "obj-8",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
                     "destination": [
                         "obj-43",
                         2
-                    ],
+                    ]
+                }
+            },
+            {
+                "patchline": {
                     "source": [
-                        "obj-9",
+                        "obj-90",
                         0
+                    ],
+                    "destination": [
+                        "obj-91",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-91",
+                        0
+                    ],
+                    "destination": [
+                        "obj-43",
+                        4
                     ]
                 }
             }
