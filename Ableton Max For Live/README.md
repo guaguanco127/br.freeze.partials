@@ -1,22 +1,28 @@
-# Ableton Max for Live device: br.freeze.partials.1.1  
+# Ableton Max for Live device: br.freeze.partials.1.3  
    
 By Brian Riordan  
 [guaguanco127@gmail.com](mailto:guaguanco127@gmail.com)  
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.freeze.partials.1.1, with all related files, can be found here: [https://github.com/guaguanco127/br.freeze.partials](https://github.com/guaguanco127/br.freeze.partials)  
+Repository for br.freeze.partials.1.3, with all related files, can be found here: [https://github.com/guaguanco127/br.freeze.partials](https://github.com/guaguanco127/br.freeze.partials)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 These files were created with Max 9. 
 
 ## Table of Contents 
 
+[What's New in 1.3](#whats-new-in-13)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)  
 [What is a Max for Live Device?](#M4L)  
 [How To Install](#Install)  
 [sigmund~](#sigmund)  
+
+## What's New in 1.3
+
+- **Mix Mode is now "Thru" / "Aux" (was "Insert" / "Gate").** "Thru" (0) lets the dry sound pass while the effect is off; "Aux" (1) is silent until you turn it on, for use on a send/return. Only the names changed: the numbers, the default and the sound are exactly as in 1.2, so 1.3 swaps in without rewiring.
+- The Max for Live device jumps from 1.1 to 1.3, so the abstraction and the device share one number again.
 
 ## What's New in 1.1
 
@@ -46,7 +52,7 @@ br.freeze.partials listens to a stereo sound, finds the strongest partials (the 
 
 **Sens:** 0 to 1. How sudden a jump in level counts as an attack: 0 = only strong attacks, 1 = softer attacks too. The default is 0.5.
 
-**Insert / Gate:** What you hear while the effect is switched off. Insert passes the dry sound (for use on a track); Gate is silent (for use on a send/return). The default is Gate.
+**Thru / Aux:** What you hear while the effect is switched off. Thru passes the dry sound (for use on a track); Aux is silent (for use on a send/return). The default is Aux.
 
 **Pitch:** -36 to 36 semitones. Transposes the whole frozen chord. The default is 0.
 
@@ -77,7 +83,7 @@ Max For Live brings the power and flexibility of Max to Ableton Live. Max For Li
 2. For Macintosh:  
 Go to your user folder  
 Then Music > Ableton > User Library > Presets > Audio Effects > Max Audio Effect  
-Copy and paste br.freeze.partials.1.1.amxd into that folder
+Copy and paste br.freeze.partials.1.3.amxd into that folder
 
 3. For Windows: \Users\[username]\Documents\Ableton\User Library\Presets\Audio Effects\Max Audio Effect  
 
@@ -94,6 +100,7 @@ Copy and paste br.freeze.partials.1.1.amxd into that folder
 br.freeze.partials uses **sigmund~** (sinusoidal analysis and pitch tracking) by **Miller Puckette**, with 32-bit Max ports by Ted Apel, Barry Threw and David Zicarelli, 64-bit Max ports by Volker Böhm, and the Mac (Intel + Apple Silicon) and Windows builds from Isabel Kaspriskie's [mp-objects](https://github.com/isabelgk/mp-objects) package. It is included here under its Standard Improved BSD License (sigmund~ LICENSE.txt). See sigmund~ CREDITS.md for details. If you already have sigmund~ installed, Max may warn about two copies; it still works, and you can delete the one in this folder.
 
 ## <a name="Version"></a>Version History  
+Version 1.3: Mix Mode renamed to Thru / Aux.  
 Version 1.1: first Max for Live release (stereo, crossfade, attack detect, Dry/Wet, Insert/Gate, Levels).
 
 ## <a name="Credits"></a>Credits

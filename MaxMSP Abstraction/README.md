@@ -1,5 +1,5 @@
 # Max/MSP Abstractions:   
-## br.freeze.partials.1.2
+## br.freeze.partials.1.3
 
 
 
@@ -8,13 +8,14 @@ By Brian Riordan
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.freeze.partials.1.2, with all related files, can be found here: [https://github.com/guaguanco127/br.freeze.partials](https://github.com/guaguanco127/br.freeze.partials)  
+Repository for br.freeze.partials.1.3, with all related files, can be found here: [https://github.com/guaguanco127/br.freeze.partials](https://github.com/guaguanco127/br.freeze.partials)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 These files were created with Max 9. 
 
 ## Table of Contents 
 
+[What's New in 1.3](#whats-new-in-13)  
 [What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)   
@@ -25,6 +26,10 @@ These files were created with Max 9.
 [Example Patch](#Example)  
 [sigmund~](#sigmund)  
  
+## What's New in 1.3
+
+- **Mix Mode is now "Thru" / "Aux" (was "Insert" / "Gate").** "Thru" (0) lets the dry sound pass while the effect is off; "Aux" (1) is silent until you turn it on, for use on a send/return. Only the names changed: the numbers, the default and the sound are exactly as in 1.2, so 1.3 swaps in without rewiring.
+
 ## What's New in 1.2
 
 - **State outlet** (abstraction only): a new last outlet sends every setting as a named message the moment it changes (`pitch`, `hipass`, `lopass`, `drive`, `crossfade`, `sensitivity`, `drywet`, `threshold`, `on`, `detect`, `mode`). See [State outlet](https://github.com/guaguanco127/br.freeze.partials/tree/main/MaxMSP%20Abstraction#State).
@@ -61,7 +66,7 @@ br.freeze.partials listens to a stereo sound, finds the strongest partials (the 
 
 **Sens:** 0 to 1. How sudden a jump in level counts as an attack: 0 = only strong attacks, 1 = softer attacks too. The default is 0.5.
 
-**Insert / Gate:** What you hear while the effect is switched off. Insert passes the dry sound (for use on a track); Gate is silent (for use on a send/return). The default is Gate.
+**Thru / Aux:** What you hear while the effect is switched off. Thru passes the dry sound (for use on a track); Aux is silent (for use on a send/return). The default is Aux.
 
 **Pitch:** -36 to 36 semitones. Transposes the whole frozen chord. The default is 0.
 
@@ -90,7 +95,7 @@ By saving your logic in an abstraction, you can create modules that can be used 
 1. Make sure you have Max 9 installed in your computer. And, make sure you are using a Max patch that is inside of a folder.  
 
 2. Copy and paste ALL of the files in this folder inside of the same folder as the Max patch you are using. br.freeze.partials needs all of them:
-   - br.freeze.partials.1.2.maxpat (the abstraction)
+   - br.freeze.partials.1.3.maxpat (the abstraction)
    - br.freeze.partials.engine.1.1.maxpat (one side's engine, used twice)
    - br.freeze.partials.voice.1.1.maxpat (one voice)
    - br.freeze.partials.sort.1.1.js (sorts the partials, applies the Threshold and the crossfade)
@@ -98,9 +103,11 @@ By saving your logic in an abstraction, you can create modules that can be used 
 
 3. To use the built-in controls, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the abstraction located within the same folder as your project. Size the bpatcher to 340 x 84 to show all of the controls.
 
-4. Alternatively, create an object with the abstraction's name ([br.freeze.partials.1.2], do not include brackets) and control it through its inlets (see below).
+4. Alternatively, create an object with the abstraction's name ([br.freeze.partials.1.3], do not include brackets) and control it through its inlets (see below).
 
 **Mac:** a downloaded external may be blocked the first time it loads. If Max says it can't load sigmund~, allow it in System Settings > Privacy & Security, then restart Max.
+
+**Updating from 1.2:** 1.3 only renames Mix Mode to Thru / Aux (same numbers, same default); every inlet and outlet is unchanged. Replace br.freeze.partials.1.2.maxpat with br.freeze.partials.1.3.maxpat; the engine, voice and sorter files stay the same.
 
 **Updating from 1.1:** 1.2 only adds the State outlet; every inlet and the L/R outlets are unchanged. Replace br.freeze.partials.1.1.maxpat with br.freeze.partials.1.2.maxpat; the engine, voice and sorter files stay the same.
 
@@ -125,7 +132,7 @@ Every control has its own inlet. Sending a value to an inlet moves its on-screen
 | 11 | Threshold | Float | -100 - 0 dB | -60 |
 | 12 | On/Off | Int | 0 / 1 (1 also freezes right away) | 1 |
 | 13 | Detect | Int | 0 / 1 | 0 |
-| 14 | Mode | Int | 0 = Insert, 1 = Gate | 1 |
+| 14 | Mode | Int | 0 = Thru, 1 = Aux | 1 |
 | 15 | Levels | List | 16 floats, 0 - 1, lowest partial first | all 1 |
 
 | Outlet | Name | Type |
@@ -156,13 +163,13 @@ The last outlet sends the current settings as named messages the moment they cha
 | threshold | Thresh | -100 - 0 dB |
 | on | Freeze.Partials (on/off) | 0 = Off, 1 = On |
 | detect | Detect | 0 = Off, 1 = On |
-| mode | Insert / Gate | 0 = Insert, 1 = Gate |
+| mode | Thru / Aux | 0 = Thru, 1 = Aux |
 
 Each message carries the same value its inlet takes, so a State message can go straight back into an inlet. Freeze is an action, not a setting, so it is not sent. Levels has no control on the panel (it comes in through the last inlet), so it is not sent either.
 
 ## <a name="Example"></a>Example Patch
 
-Open _br.freeze.partials.example.1.2.maxpat (keep it in the same folder as the abstraction). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
+Open _br.freeze.partials.example.1.3.maxpat (keep it in the same folder as the abstraction). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
 
 - **Source:** the demo tone (a saw at 110 Hz on the left and 165 Hz on the right) is on when the patch opens; turn on the mic / line in 1 + 2 toggle to use your own sound.
 - **Freeze:** click Freeze on the panel, then try X-Fade, Detect, Pitch, Drive, Thresh and Dry/Wet.

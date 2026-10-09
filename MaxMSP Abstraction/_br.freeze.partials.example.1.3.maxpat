@@ -15,7 +15,7 @@
    1149.0,
    756.0
   ],
-  "description": "_br.freeze.partials.example.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan.",
+  "description": "_br.freeze.partials.example.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan.",
   "showontab": 1,
   "boxes": [
    {
@@ -31,7 +31,7 @@
       632.0,
       87.0
      ],
-     "text": "_br.freeze.partials.example.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan."
+     "text": "_br.freeze.partials.example.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan."
     }
    },
    {
@@ -49,7 +49,7 @@
       790.0,
       33.0
      ],
-     "text": "br.freeze.partials 1.2: freezes the partials (sine components) of a stereo sound into 16 folded sine voices per side. Pick a source, turn the audio on, raise the gain (it starts muted), then click Freeze on the panel. Try X-Fade for slow morphs between freezes, and detect to freeze on every attack."
+     "text": "br.freeze.partials 1.3: freezes the partials (sine components) of a stereo sound into 16 folded sine voices per side. Pick a source, turn the audio on, raise the gain (it starts muted), then click Freeze on the panel. Try X-Fade for slow morphs between freezes, and detect to freeze on every attack."
     }
    },
    {
@@ -373,7 +373,7 @@
      "lockeddragscroll": 0,
      "lockedsize": 0,
      "maxclass": "bpatcher",
-     "name": "br.freeze.partials.1.2.maxpat",
+     "name": "br.freeze.partials.1.3.maxpat",
      "numinlets": 15,
      "numoutlets": 3,
      "offset": [
@@ -537,7 +537,7 @@
       703.0,
       47.0
      ],
-     "text": "Keep every file from this folder together, next to your patch: br.freeze.partials.1.2.maxpat, br.freeze.partials.engine.1.1.maxpat, br.freeze.partials.voice.1.1.maxpat, br.freeze.partials.sort.1.1.js, plus sigmund~ (Mac .mxo, Windows .mxe64) and its license. Mac: if sigmund~ is blocked the first time, allow it in System Settings > Privacy & Security. Hover over an inlet for its range and default."
+     "text": "Keep every file from this folder together, next to your patch: br.freeze.partials.1.3.maxpat, br.freeze.partials.engine.1.1.maxpat, br.freeze.partials.voice.1.1.maxpat, br.freeze.partials.sort.1.1.js, plus sigmund~ (Mac .mxo, Windows .mxe64) and its license. Mac: if sigmund~ is blocked the first time, allow it in System Settings > Privacy & Security. Hover over an inlet for its range and default."
     }
    },
    {
@@ -1238,7 +1238,7 @@
           160.0,
           20.0
          ],
-         "text": "mode (0 Insert, 1 Gate)"
+         "text": "mode (0 Thru, 1 Aux)"
         }
        }
       ],
