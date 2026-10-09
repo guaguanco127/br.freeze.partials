@@ -1584,7 +1584,7 @@
                     ],
                     "fontname": "Arial",
                     "fontsize": 12.0,
-                    "text": "br.freeze.partials engine 1.1: one side (no panel). Used twice by br.freeze.partials.1.1 (L and R). poly~ 32 = two banks of 16 voices; the sorter alternates banks for crossfades."
+                    "text": "br.freeze.partials engine 1.1: one side (no panel). Used twice by br.freeze.partials.1.3 (L and R). poly~ 32 = two banks of 16 voices; the sorter alternates banks for crossfades."
                 }
             }
         ],
