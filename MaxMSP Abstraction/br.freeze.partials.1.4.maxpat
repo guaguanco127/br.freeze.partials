@@ -12,13 +12,13 @@
   "openrect": [
    85.0,
    104.0,
-   340.0,
+   432.0,
    84.0
   ],
   "openrectmode": 0,
   "openinpresentation": 1,
-  "devicewidth": 340.0,
-  "description": "br.freeze.partials.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan.",
+  "devicewidth": 432.0,
+  "description": "br.freeze.partials.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, wobble, crossfade, detect and panel are by Brian Riordan.",
   "boxes": [
    {
     "box": {
@@ -28,12 +28,12 @@
      "numinlets": 1,
      "numoutlets": 0,
      "patching_rect": [
-      1320.0,
+      1490.0,
       20.0,
-      632.0,
+      634.0,
       87.0
      ],
-     "text": "br.freeze.partials.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan."
+     "text": "br.freeze.partials.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, wobble, crossfade, detect and panel are by Brian Riordan."
     }
    },
    {
@@ -230,44 +230,6 @@
     "box": {
      "comment": "Threshold: float, -100 - 0 dB, default -60. Quieter partials never get a voice",
      "id": "in-thr",
-     "index": 11,
-     "maxclass": "inlet",
-     "numinlets": 0,
-     "numoutlets": 1,
-     "outlettype": [
-      ""
-     ],
-     "patching_rect": [
-      880.0,
-      20.0,
-      30.0,
-      30.0
-     ]
-    }
-   },
-   {
-    "box": {
-     "comment": "On/Off: int 0 / 1, default 1. 0 = off (no CPU); 1 = on + freezes right away",
-     "id": "in-on",
-     "index": 12,
-     "maxclass": "inlet",
-     "numinlets": 0,
-     "numoutlets": 1,
-     "outlettype": [
-      ""
-     ],
-     "patching_rect": [
-      965.0,
-      20.0,
-      30.0,
-      30.0
-     ]
-    }
-   },
-   {
-    "box": {
-     "comment": "Detect: int 0 / 1, default 0. 1 = freeze automatically on every attack",
-     "id": "in-det",
      "index": 13,
      "maxclass": "inlet",
      "numinlets": 0,
@@ -285,8 +247,8 @@
    },
    {
     "box": {
-     "comment": "Mode: int 0 = Thru (dry passes while off), 1 = Aux (silent while off), default 1",
-     "id": "in-mode",
+     "comment": "On/Off: int 0 / 1, default 1. 0 = off (no CPU); 1 = on + freezes right away",
+     "id": "in-on",
      "index": 14,
      "maxclass": "inlet",
      "numinlets": 0,
@@ -304,8 +266,8 @@
    },
    {
     "box": {
-     "comment": "Levels: list of 16 floats 0 - 1 (voices low -> high partial, both sides), default all 1. Connect your own multislider here",
-     "id": "in-lev",
+     "comment": "Detect: int 0 / 1, default 0. 1 = freeze automatically on every attack",
+     "id": "in-det",
      "index": 15,
      "maxclass": "inlet",
      "numinlets": 0,
@@ -315,6 +277,44 @@
      ],
      "patching_rect": [
       1220.0,
+      20.0,
+      30.0,
+      30.0
+     ]
+    }
+   },
+   {
+    "box": {
+     "comment": "Mode: int 0 = Thru (dry passes while off), 1 = Aux (silent while off), default 1",
+     "id": "in-mode",
+     "index": 16,
+     "maxclass": "inlet",
+     "numinlets": 0,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      1305.0,
+      20.0,
+      30.0,
+      30.0
+     ]
+    }
+   },
+   {
+    "box": {
+     "comment": "Levels: list of 16 floats 0 - 1 (voices low -> high partial, both sides), default all 1. Connect your own multislider here",
+     "id": "in-lev",
+     "index": 17,
+     "maxclass": "inlet",
+     "numinlets": 0,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      1390.0,
       20.0,
       30.0,
       30.0
@@ -562,7 +562,7 @@
      ],
      "parameter_enable": 1,
      "patching_rect": [
-      880.0,
+      1050.0,
       60.0,
       50.0,
       15.0
@@ -610,7 +610,7 @@
      ],
      "parameter_enable": 1,
      "patching_rect": [
-      965.0,
+      1135.0,
       60.0,
       50.0,
       15.0
@@ -628,11 +628,11 @@
       },
       "valueof": {
        "parameter_enum": [
-        "off",
-        "on"
+        "val1",
+        "val2"
        ],
        "parameter_initial": [
-        1
+        0
        ],
        "parameter_initial_enable": 1,
        "parameter_longname": "On/Off",
@@ -654,7 +654,7 @@
      "numinlets": 1,
      "numoutlets": 0,
      "patching_rect": [
-      1860.0,
+      2030.0,
       20.0,
       150.0,
       20.0
@@ -682,7 +682,7 @@
      "numinlets": 1,
      "numoutlets": 0,
      "patching_rect": [
-      1860.0,
+      2030.0,
       45.0,
       150.0,
       20.0
@@ -712,7 +712,7 @@
      "numinlets": 1,
      "numoutlets": 0,
      "patching_rect": [
-      1860.0,
+      2030.0,
       95.0,
       60.0,
       20.0
@@ -740,7 +740,7 @@
      "numinlets": 1,
      "numoutlets": 0,
      "patching_rect": [
-      1860.0,
+      2030.0,
       120.0,
       60.0,
       20.0
@@ -809,8 +809,7 @@
        "parameter_modmode": 0,
        "parameter_shortname": "X-Fade",
        "parameter_type": 0,
-       "parameter_unitstyle": 2,
-       "parameter_mmin": 0.0
+       "parameter_unitstyle": 2
       }
      },
      "textcolor": [
@@ -869,8 +868,7 @@
        "parameter_modmode": 0,
        "parameter_shortname": "Sens",
        "parameter_type": 0,
-       "parameter_unitstyle": 1,
-       "parameter_mmin": 0.0
+       "parameter_unitstyle": 1
       }
      },
      "textcolor": [
@@ -929,8 +927,7 @@
        "parameter_modmode": 0,
        "parameter_shortname": "Dry/Wet",
        "parameter_type": 0,
-       "parameter_unitstyle": 5,
-       "parameter_mmin": 0.0
+       "parameter_unitstyle": 5
       }
      },
      "textcolor": [
@@ -960,7 +957,7 @@
      ],
      "parameter_enable": 1,
      "patching_rect": [
-      1050.0,
+      1220.0,
       60.0,
       60.0,
       15.0
@@ -978,8 +975,8 @@
       },
       "valueof": {
        "parameter_enum": [
-        "off",
-        "on"
+        "val1",
+        "val2"
        ],
        "parameter_initial": [
         0
@@ -1015,7 +1012,7 @@
      ],
      "parameter_enable": 1,
      "patching_rect": [
-      1135.0,
+      1305.0,
       60.0,
       60.0,
       15.0
@@ -1033,8 +1030,8 @@
       },
       "valueof": {
        "parameter_enum": [
-        "thru",
-        "aux"
+        "val1",
+        "val2"
        ],
        "parameter_initial": [
         1
@@ -1058,7 +1055,7 @@
      "fontsize": 12.0,
      "id": "eng-L",
      "maxclass": "newobj",
-     "numinlets": 10,
+     "numinlets": 12,
      "numoutlets": 1,
      "outlettype": [
       "signal"
@@ -1069,7 +1066,7 @@
       200.0,
       22.0
      ],
-     "text": "br.freeze.partials.engine.1.1"
+     "text": "br.freeze.partials.engine.1.2"
     }
    },
    {
@@ -1078,7 +1075,7 @@
      "fontsize": 12.0,
      "id": "eng-R",
      "maxclass": "newobj",
-     "numinlets": 10,
+     "numinlets": 12,
      "numoutlets": 1,
      "outlettype": [
       "signal"
@@ -1089,7 +1086,7 @@
       200.0,
       22.0
      ],
-     "text": "br.freeze.partials.engine.1.1"
+     "text": "br.freeze.partials.engine.1.2"
     }
    },
    {
@@ -1189,7 +1186,7 @@
       "float"
      ],
      "patching_rect": [
-      880.0,
+      1050.0,
       245.0,
       70.0,
       22.0
@@ -1210,7 +1207,7 @@
       ""
      ],
      "patching_rect": [
-      1220.0,
+      1390.0,
       245.0,
       70.0,
       22.0
@@ -1933,7 +1930,7 @@
       ]
      },
      "patching_rect": [
-      1050.0,
+      1220.0,
       305.0,
       150.0,
       22.0
@@ -1975,7 +1972,7 @@
       "int"
      ],
      "patching_rect": [
-      965.0,
+      1135.0,
       245.0,
       80.0,
       22.0
@@ -1996,7 +1993,7 @@
       "int"
      ],
      "patching_rect": [
-      965.0,
+      1135.0,
       405.0,
       70.0,
       22.0
@@ -2017,7 +2014,7 @@
       ""
      ],
      "patching_rect": [
-      1055.0,
+      1225.0,
       275.0,
       60.0,
       22.0
@@ -2037,7 +2034,7 @@
       "bang"
      ],
      "patching_rect": [
-      1055.0,
+      1225.0,
       335.0,
       60.0,
       22.0
@@ -2057,7 +2054,7 @@
       ""
      ],
      "patching_rect": [
-      1125.0,
+      1295.0,
       305.0,
       38.0,
       22.0
@@ -2074,7 +2071,7 @@
      "numinlets": 1,
      "numoutlets": 0,
      "patching_rect": [
-      1055.0,
+      1225.0,
       360.0,
       373.0,
       20.0
@@ -2274,7 +2271,7 @@
      "numinlets": 1,
      "numoutlets": 0,
      "patching_rect": [
-      1035.0,
+      1205.0,
       430.0,
       380.0,
       20.0
@@ -2436,7 +2433,7 @@
    },
    {
     "box": {
-     "annotation": "br.freeze.partials.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan.",
+     "annotation": "br.freeze.partials.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, wobble, crossfade, detect and panel are by Brian Riordan.",
      "background": 1,
      "bgcolor": [
       0.0,
@@ -2450,7 +2447,7 @@
       0.0,
       1.0
      ],
-     "hint": "br.freeze.partials.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan.",
+     "hint": "br.freeze.partials.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, wobble, crossfade, detect and panel are by Brian Riordan.",
      "id": "obj-panel",
      "maxclass": "panel",
      "mode": 0,
@@ -2466,7 +2463,7 @@
      "presentation_rect": [
       0.0,
       0.0,
-      340.0,
+      432.0,
       84.0
      ],
      "rounded": 7
@@ -2484,7 +2481,7 @@
       "bang"
      ],
      "patching_rect": [
-      1050.0,
+      1220.0,
       335.0,
       53.0,
       22.0
@@ -2501,7 +2498,7 @@
      "numinlets": 1,
      "numoutlets": 0,
      "patching_rect": [
-      1100.0,
+      1270.0,
       335.0,
       330.0,
       20.0
@@ -2963,7 +2960,7 @@
       "float"
      ],
      "patching_rect": [
-      880.0,
+      1050.0,
       130.0,
       40.0,
       22.0
@@ -2985,7 +2982,7 @@
       "int"
      ],
      "patching_rect": [
-      880.0,
+      1050.0,
       155.0,
       62.0,
       22.0
@@ -3005,7 +3002,7 @@
       ""
      ],
      "patching_rect": [
-      880.0,
+      1050.0,
       205.0,
       123.0,
       22.0
@@ -3026,7 +3023,7 @@
       "int"
      ],
      "patching_rect": [
-      965.0,
+      1135.0,
       130.0,
       40.0,
       22.0
@@ -3048,7 +3045,7 @@
       "int"
      ],
      "patching_rect": [
-      965.0,
+      1135.0,
       155.0,
       62.0,
       22.0
@@ -3068,7 +3065,7 @@
       ""
      ],
      "patching_rect": [
-      965.0,
+      1135.0,
       180.0,
       74.0,
       22.0
@@ -3089,7 +3086,7 @@
       "int"
      ],
      "patching_rect": [
-      1050.0,
+      1220.0,
       130.0,
       40.0,
       22.0
@@ -3111,7 +3108,7 @@
       "int"
      ],
      "patching_rect": [
-      1050.0,
+      1220.0,
       155.0,
       62.0,
       22.0
@@ -3131,7 +3128,7 @@
       ""
      ],
      "patching_rect": [
-      1050.0,
+      1220.0,
       205.0,
       102.0,
       22.0
@@ -3152,7 +3149,7 @@
       "int"
      ],
      "patching_rect": [
-      1135.0,
+      1305.0,
       130.0,
       40.0,
       22.0
@@ -3174,7 +3171,7 @@
       "int"
      ],
      "patching_rect": [
-      1135.0,
+      1305.0,
       155.0,
       62.0,
       22.0
@@ -3194,7 +3191,7 @@
       ""
      ],
      "patching_rect": [
-      1135.0,
+      1305.0,
       180.0,
       88.0,
       22.0
@@ -3204,14 +3201,14 @@
    },
    {
     "box": {
-     "comment": "State: each setting as <name> <value> the moment it changes (pitch, hipass, lopass, drive, crossfade, sensitivity, drywet, threshold, on, detect, mode). Freeze is an action, not a setting, so it is not sent. Levels is not sent (inlet only, no panel control).",
+     "comment": "State: each setting as <name> <value> the moment it changes (pitch, hipass, lopass, drive, crossfade, sensitivity, drywet, speed, depth, threshold, on, detect, mode). Freeze is an action, not a setting, so it is not sent. Levels is not sent (inlet only, no panel control).",
      "id": "st-out",
      "index": 3,
      "maxclass": "outlet",
      "numinlets": 1,
      "numoutlets": 0,
      "patching_rect": [
-      1320.0,
+      1490.0,
       625.0,
       30.0,
       30.0
@@ -3228,12 +3225,322 @@
      "numinlets": 1,
      "numoutlets": 0,
      "patching_rect": [
-      1360.0,
+      1530.0,
       625.0,
       300.0,
       47.0
      ],
      "text": "State outlet: each control -> t (engine first) -> change -> prepend <name>. Inlet numbers and panel moves are both reported."
+    }
+   },
+   {
+    "box": {
+     "comment": "Speed (wobble): float, 0.003 - 1 Hz, default 0.15. The fastest the partials fade up and down. Each voice moves at its own random rate between 1/3 of this and this (0.15 = 0.05 - 0.15 Hz, one fade every 7 - 20 s), re-rolled on every Freeze",
+     "id": "in-spd",
+     "index": 11,
+     "maxclass": "inlet",
+     "numinlets": 0,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      880.0,
+      20.0,
+      30.0,
+      30.0
+     ]
+    }
+   },
+   {
+    "box": {
+     "comment": "Depth (wobble): float, 0 - 100 %, default 50. How far the partials fade down. Each voice gets its own random depth around this; 0 = steady, 50 = 25-75 % fades, 100 = 50-100 % fades",
+     "id": "in-dep",
+     "index": 12,
+     "maxclass": "inlet",
+     "numinlets": 0,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      965.0,
+      20.0,
+      30.0,
+      30.0
+     ]
+    }
+   },
+   {
+    "box": {
+     "activeneedlecolor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "id": "ui-spd",
+     "maxclass": "live.dial",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "",
+      "float"
+     ],
+     "parameter_enable": 1,
+     "patching_rect": [
+      880.0,
+      60.0,
+      44.0,
+      48.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      337.0,
+      25.0,
+      44.0,
+      48.0
+     ],
+     "saved_attribute_attributes": {
+      "activeneedlecolor": {
+       "expression": ""
+      },
+      "textcolor": {
+       "expression": ""
+      },
+      "valueof": {
+       "parameter_exponent": 3.0,
+       "parameter_initial": [
+        0.15
+       ],
+       "parameter_initial_enable": 1,
+       "parameter_longname": "Speed",
+       "parameter_mmax": 1.0,
+       "parameter_mmin": 0.003,
+       "parameter_modmode": 0,
+       "parameter_shortname": "Speed",
+       "parameter_type": 0,
+       "parameter_unitstyle": 3
+      }
+     },
+     "textcolor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "varname": "Speed"
+    }
+   },
+   {
+    "box": {
+     "activeneedlecolor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "id": "ui-dep",
+     "maxclass": "live.dial",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "",
+      "float"
+     ],
+     "parameter_enable": 1,
+     "patching_rect": [
+      965.0,
+      60.0,
+      44.0,
+      48.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      383.0,
+      25.0,
+      44.0,
+      48.0
+     ],
+     "saved_attribute_attributes": {
+      "activeneedlecolor": {
+       "expression": ""
+      },
+      "textcolor": {
+       "expression": ""
+      },
+      "valueof": {
+       "parameter_initial": [
+        50.0
+       ],
+       "parameter_initial_enable": 1,
+       "parameter_longname": "Depth",
+       "parameter_mmax": 100.0,
+       "parameter_modmode": 0,
+       "parameter_shortname": "Depth",
+       "parameter_type": 0,
+       "parameter_unitstyle": 5
+      }
+     },
+     "textcolor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "varname": "Depth"
+    }
+   },
+   {
+    "box": {
+     "id": "st-t-speed",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "float",
+      "float"
+     ],
+     "patching_rect": [
+      880.0,
+      130.0,
+      40.0,
+      22.0
+     ],
+     "text": "t f f"
+    }
+   },
+   {
+    "box": {
+     "id": "st-c-speed",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 3,
+     "outlettype": [
+      "",
+      "int",
+      "int"
+     ],
+     "patching_rect": [
+      880.0,
+      155.0,
+      62.0,
+      22.0
+     ],
+     "text": "change 0."
+    }
+   },
+   {
+    "box": {
+     "id": "st-p-speed",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      880.0,
+      180.0,
+      95.0,
+      22.0
+     ],
+     "text": "prepend speed"
+    }
+   },
+   {
+    "box": {
+     "id": "t-speed",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "float",
+      "float"
+     ],
+     "patching_rect": [
+      880.0,
+      245.0,
+      70.0,
+      22.0
+     ],
+     "text": "trigger f f"
+    }
+   },
+   {
+    "box": {
+     "id": "st-t-depth",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "float",
+      "float"
+     ],
+     "patching_rect": [
+      965.0,
+      130.0,
+      40.0,
+      22.0
+     ],
+     "text": "t f f"
+    }
+   },
+   {
+    "box": {
+     "id": "st-c-depth",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 3,
+     "outlettype": [
+      "",
+      "int",
+      "int"
+     ],
+     "patching_rect": [
+      965.0,
+      155.0,
+      62.0,
+      22.0
+     ],
+     "text": "change 0."
+    }
+   },
+   {
+    "box": {
+     "id": "st-p-depth",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      965.0,
+      205.0,
+      95.0,
+      22.0
+     ],
+     "text": "prepend depth"
+    }
+   },
+   {
+    "box": {
+     "id": "t-depth",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "float",
+      "float"
+     ],
+     "patching_rect": [
+      965.0,
+      245.0,
+      70.0,
+      22.0
+     ],
+     "text": "trigger f f"
     }
    }
   ],
@@ -3537,6 +3844,18 @@
    {
     "patchline": {
      "destination": [
+      "ui-dep",
+      0
+     ],
+     "source": [
+      "in-dep",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
       "ui-det",
       0
      ],
@@ -3662,6 +3981,18 @@
      ],
      "source": [
       "in-sen",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "ui-spd",
+      0
+     ],
+     "source": [
+      "in-spd",
       0
      ]
     }
@@ -3849,6 +4180,18 @@
    {
     "patchline": {
      "destination": [
+      "st-p-depth",
+      0
+     ],
+     "source": [
+      "st-c-depth",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
       "st-p-detect",
       0
      ],
@@ -3957,6 +4300,18 @@
    {
     "patchline": {
      "destination": [
+      "st-p-speed",
+      0
+     ],
+     "source": [
+      "st-c-speed",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
       "st-p-threshold",
       0
      ],
@@ -3974,6 +4329,18 @@
      ],
      "source": [
       "st-p-crossfade",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "st-out",
+      0
+     ],
+     "source": [
+      "st-p-depth",
       0
      ]
     }
@@ -4093,6 +4460,18 @@
       0
      ],
      "source": [
+      "st-p-speed",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "st-out",
+      0
+     ],
+     "source": [
       "st-p-threshold",
       0
      ]
@@ -4118,6 +4497,30 @@
      ],
      "source": [
       "st-t-crossfade",
+      1
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "st-c-depth",
+      0
+     ],
+     "source": [
+      "st-t-depth",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "t-depth",
+      0
+     ],
+     "source": [
+      "st-t-depth",
       1
      ]
     }
@@ -4341,6 +4744,30 @@
    {
     "patchline": {
      "destination": [
+      "st-c-speed",
+      0
+     ],
+     "source": [
+      "st-t-speed",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "t-speed",
+      0
+     ],
+     "source": [
+      "st-t-speed",
+      1
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
       "st-c-threshold",
       0
      ],
@@ -4383,6 +4810,30 @@
      "source": [
       "sum-R",
       0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "eng-L",
+      11
+     ],
+     "source": [
+      "t-depth",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "eng-R",
+      11
+     ],
+     "source": [
+      "t-depth",
+      1
      ]
     }
    },
@@ -4618,6 +5069,30 @@
     "patchline": {
      "destination": [
       "eng-L",
+      10
+     ],
+     "source": [
+      "t-speed",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "eng-R",
+      10
+     ],
+     "source": [
+      "t-speed",
+      1
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "eng-L",
       9
      ],
      "source": [
@@ -4647,6 +5122,18 @@
      "source": [
       "t-xf",
       2
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "st-t-depth",
+      0
+     ],
+     "source": [
+      "ui-dep",
+      0
      ]
     }
    },
@@ -4694,6 +5181,18 @@
      ],
      "source": [
       "ui-sen",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "st-t-speed",
+      0
+     ],
+     "source": [
+      "ui-spd",
       0
      ]
     }

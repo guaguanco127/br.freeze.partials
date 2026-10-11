@@ -1,6 +1,6 @@
 # Max/MSP Patches, Abstractions, Externals, RNBO, VSTs, and Ableton Max for Live 
 
-## br.freeze.partials.1.3
+## br.freeze.partials.1.4
 
 
 
@@ -9,19 +9,27 @@ By Brian Riordan
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.freeze.partials.1.3, with all related files, can be found here: [https://github.com/guaguanco127/br.freeze.partials](https://github.com/guaguanco127/br.freeze.partials)  
+Repository for br.freeze.partials.1.4, with all related files, can be found here: [https://github.com/guaguanco127/br.freeze.partials](https://github.com/guaguanco127/br.freeze.partials)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 These files were created with Max 9. 
 
 ## Links
 
+[What's New in 1.4](#whats-new-in-14)  
 [What's New in 1.3](#whats-new-in-13)  
 [What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)   
 [Ableton Max for Live Device](https://github.com/guaguanco127/br.freeze.partials/tree/main/Ableton%20Max%20For%20Live) To use inside of Ableton Suite   
 [Max/MSP Abstraction](https://github.com/guaguanco127/br.freeze.partials/tree/main/MaxMSP%20Abstraction) To use as an abstraction within Max/MSP   
+
+## What's New in 1.4
+
+- **Speed and Depth dials for the wobble.** Every partial slowly fades up and down on its own. **Speed** (0.003 - 1 Hz) sets the fastest a partial can move: each voice picks its own random rate between a third of Speed and Speed, so the chord never pulses in time or in phase. Turn it down for drifts that take minutes. **Depth** (0 - 100 %) sets how far the partials fade: 0 holds them steady, 50 % is the familiar 25 - 75 % breathing, 100 % lets a partial fade almost to silence. The defaults (0.15 Hz, 50 %) sound exactly like 1.3.
+- **New inlets 11 (Speed) and 12 (Depth)**, in panel order, so Threshold, On/Off, Detect, Mode and Levels move down two places (now 13 - 17). Re-connect anything patched into those. The State outlet adds `speed` and `depth`.
+- The panel is wider: 432 x 84.
+- New engine and voice files (**1.2**); the sorter is still 1.1. The Max for Live device is 1.4 too, with the same two dials.
 
 ## What's New in 1.3
 
@@ -59,6 +67,7 @@ br.freeze.partials listens to a stereo sound, finds the strongest partials (the 
 | Partial freeze | Freeze holds the partials sounding now as up to 16 sine voices per side, sorted low to high |
 | Crossfade | Morph from one frozen chord to the next over up to 10 seconds |
 | Detect | Freeze automatically on every attack |
+| Wobble | Speed and Depth set how fast and how far each partial drifts, each voice at its own random rate |
 | Wavefolding | Drive adds a Buchla-style, anti-aliased sine fold to every voice |
 | Per-partial levels | 16 levels (a multislider) shape the chord, low to high |
 | Threshold | Partials quieter than the Threshold never get a voice |
@@ -67,9 +76,10 @@ br.freeze.partials listens to a stereo sound, finds the strongest partials (the 
 
 **sigmund~ is included:** br.freeze.partials uses Miller Puckette's sigmund~ to find the partials. A copy for Mac (Intel and Apple Silicon) and Windows is in each folder, with its license and credits (sigmund~ CREDITS.md).
 
-The example patch (_br.freeze.partials.example.1.3.maxpat) has a stereo mic input, a stereo demo tone, a multislider for the Levels and a State outlet tab.
+The example patch (_br.freeze.partials.example.1.4.maxpat) has a stereo mic input, a stereo demo tone, a multislider for the Levels and a State outlet tab.
 
 ## <a name="Version"></a>Version History  
+Version 1.4: Speed and Depth dials for the wobble.  
 Version 1.3: Mix Mode renamed to Thru / Aux.  
 Version 1.2: State outlet, readable control names, State outlet tab in the example.  
 Version 1.1: stereo, crossfade, attack detect, Dry/Wet, Insert/Gate, squared Levels, Max for Live device.  
@@ -77,4 +87,4 @@ Version 1.0: first release (mono abstraction).
 
 ## <a name="Credits"></a>Credits
 
-Partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, "Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan.
+Partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, "Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, wobble, crossfade, detect and panel are by Brian Riordan.

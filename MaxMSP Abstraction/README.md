@@ -1,5 +1,5 @@
 # Max/MSP Abstractions:   
-## br.freeze.partials.1.3
+## br.freeze.partials.1.4
 
 
 
@@ -8,13 +8,14 @@ By Brian Riordan
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.freeze.partials.1.3, with all related files, can be found here: [https://github.com/guaguanco127/br.freeze.partials](https://github.com/guaguanco127/br.freeze.partials)  
+Repository for br.freeze.partials.1.4, with all related files, can be found here: [https://github.com/guaguanco127/br.freeze.partials](https://github.com/guaguanco127/br.freeze.partials)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 These files were created with Max 9. 
 
 ## Table of Contents 
 
+[What's New in 1.4](#whats-new-in-14)  
 [What's New in 1.3](#whats-new-in-13)  
 [What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
@@ -26,6 +27,13 @@ These files were created with Max 9.
 [Example Patch](#Example)  
 [sigmund~](#sigmund)  
  
+## What's New in 1.4
+
+- **Speed and Depth dials for the wobble.** Every partial slowly fades up and down on its own. **Speed** (0.003 - 1 Hz) sets the fastest a partial can move: each voice picks its own random rate between a third of Speed and Speed, so the chord never pulses in time or in phase. Turn it down for drifts that take minutes. **Depth** (0 - 100 %) sets how far the partials fade: 0 holds them steady, 50 % is the familiar 25 - 75 % breathing, 100 % lets a partial fade almost to silence. The defaults (0.15 Hz, 50 %) sound exactly like 1.3.
+- **New inlets 11 (Speed) and 12 (Depth)**, in panel order, so Threshold, On/Off, Detect, Mode and Levels move down two places (now 13 - 17). Re-connect anything patched into those. The State outlet adds `speed` and `depth`.
+- The panel is wider: 432 x 84.
+- New engine and voice files (**1.2**); the sorter is still 1.1.
+
 ## What's New in 1.3
 
 - **Mix Mode is now "Thru" / "Aux" (was "Insert" / "Gate").** "Thru" (0) lets the dry sound pass while the effect is off; "Aux" (1) is silent until you turn it on, for use on a send/return. Only the names changed: the numbers, the default and the sound are exactly as in 1.2, so 1.3 swaps in without rewiring.
@@ -82,7 +90,11 @@ br.freeze.partials listens to a stereo sound, finds the strongest partials (the 
 
 **Levels:** 16 levels, 0 to 1, one per voice, lowest partial first, applied to both sides and through crossfades. The curve is squared, so half the bar is -12 dB and the bottom of the bar reaches silence. Changes take 50 ms. Every voice starts at 1.
 
-**Built in:** each voice has a slow random amplitude wobble, so a frozen chord breathes instead of sounding static. Voices pitched below 20 Hz or above 12 kHz fade out.
+**Speed:** 0.003 to 1 Hz. How fast the partials fade up and down. This is the fastest any voice moves: each voice picks its own random rate between a third of Speed and Speed (again on every Freeze), so the chord breathes without ever pulsing in time. The default is 0.15 Hz (one fade every 7 to 20 seconds).
+
+**Depth:** 0 to 100 %. How far the partials fade down. Each voice gets its own random depth around this. 0 holds the partials steady, 50 % fades them by 25 to 75 %, 100 % by 50 to 100 %. The default is 50 %.
+
+**Built in:** voices pitched below 20 Hz or above 12 kHz fade out.
 
 ## <a name="Abstraction"></a>What is an Abstraction?
 
@@ -95,17 +107,19 @@ By saving your logic in an abstraction, you can create modules that can be used 
 1. Make sure you have Max 9 installed in your computer. And, make sure you are using a Max patch that is inside of a folder.  
 
 2. Copy and paste ALL of the files in this folder inside of the same folder as the Max patch you are using. br.freeze.partials needs all of them:
-   - br.freeze.partials.1.3.maxpat (the abstraction)
-   - br.freeze.partials.engine.1.1.maxpat (one side's engine, used twice)
-   - br.freeze.partials.voice.1.1.maxpat (one voice)
+   - br.freeze.partials.1.4.maxpat (the abstraction)
+   - br.freeze.partials.engine.1.2.maxpat (one side's engine, used twice)
+   - br.freeze.partials.voice.1.2.maxpat (one voice)
    - br.freeze.partials.sort.1.1.js (sorts the partials, applies the Threshold and the crossfade)
    - sigmund~.mxo (Mac) and sigmund~.mxe64 (Windows), with sigmund~ LICENSE.txt
 
-3. To use the built-in controls, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the abstraction located within the same folder as your project. Size the bpatcher to 340 x 84 to show all of the controls.
+3. To use the built-in controls, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the abstraction located within the same folder as your project. Size the bpatcher to 432 x 84 to show all of the controls.
 
-4. Alternatively, create an object with the abstraction's name ([br.freeze.partials.1.3], do not include brackets) and control it through its inlets (see below).
+4. Alternatively, create an object with the abstraction's name ([br.freeze.partials.1.4], do not include brackets) and control it through its inlets (see below).
 
 **Mac:** a downloaded external may be blocked the first time it loads. If Max says it can't load sigmund~, allow it in System Settings > Privacy & Security, then restart Max.
+
+**Updating from 1.3:** 1.4 adds Speed (inlet 11) and Depth (inlet 12), so Threshold, On/Off, Detect, Mode and Levels move down two places: re-connect anything patched into those. Replace br.freeze.partials.1.3.maxpat with br.freeze.partials.1.4.maxpat, and the engine and voice files with their 1.2 versions (the sorter stays 1.1). Resize your bpatcher to 432 x 84.
 
 **Updating from 1.2:** 1.3 only renames Mix Mode to Thru / Aux (same numbers, same default); every inlet and outlet is unchanged. Replace br.freeze.partials.1.2.maxpat with br.freeze.partials.1.3.maxpat; the engine, voice and sorter files stay the same.
 
@@ -129,11 +143,13 @@ Every control has its own inlet. Sending a value to an inlet moves its on-screen
 | 8 | Crossfade | Float | 0 - 10000 ms | 0 |
 | 9 | Sensitivity | Float | 0 - 1 | 0.5 |
 | 10 | Dry/Wet | Float | 0 - 100 % | 100 |
-| 11 | Threshold | Float | -100 - 0 dB | -60 |
-| 12 | On/Off | Int | 0 / 1 (1 also freezes right away) | 1 |
-| 13 | Detect | Int | 0 / 1 | 0 |
-| 14 | Mode | Int | 0 = Thru, 1 = Aux | 1 |
-| 15 | Levels | List | 16 floats, 0 - 1, lowest partial first | all 1 |
+| 11 | Speed | Float | 0.003 - 1 Hz (fastest wobble) | 0.15 |
+| 12 | Depth | Float | 0 - 100 % | 50 |
+| 13 | Threshold | Float | -100 - 0 dB | -60 |
+| 14 | On/Off | Int | 0 / 1 (1 also freezes right away) | 1 |
+| 15 | Detect | Int | 0 / 1 | 0 |
+| 16 | Mode | Int | 0 = Thru, 1 = Aux | 1 |
+| 17 | Levels | List | 16 floats, 0 - 1, lowest partial first | all 1 |
 
 | Outlet | Name | Type |
 |---|---|---|
@@ -149,7 +165,7 @@ Every control has its own inlet. Sending a value to an inlet moves its on-screen
 
 ## <a name="State"></a>State outlet
 
-The last outlet sends the current settings as named messages the moment they change, for example `pitch 12.`, `on 0`, `drywet 70.`. Clicking a control, numbers into the inlets and preset recalls all show up; repeats are filtered out. Use it to keep a display, Mira or another patch in sync. Pick them out by name with [route pitch hipass lopass drive crossfade sensitivity drywet threshold on detect mode], not by position, so your patch keeps working if a later version adds controls.
+The last outlet sends the current settings as named messages the moment they change, for example `pitch 12.`, `on 0`, `drywet 70.`. Clicking a control, numbers into the inlets and preset recalls all show up; repeats are filtered out. Use it to keep a display, Mira or another patch in sync. Pick them out by name with [route pitch hipass lopass drive crossfade sensitivity drywet speed depth threshold on detect mode], not by position, so your patch keeps working if a later version adds controls.
 
 | Name | Control | Values |
 |---|---|---|
@@ -160,6 +176,8 @@ The last outlet sends the current settings as named messages the moment they cha
 | crossfade | X-Fade | 0 - 10000 ms |
 | sensitivity | Sens | 0 - 1 |
 | drywet | Dry/Wet | 0 - 100 % |
+| speed | Speed | 0.003 - 1 Hz |
+| depth | Depth | 0 - 100 % |
 | threshold | Thresh | -100 - 0 dB |
 | on | Freeze.Partials (on/off) | 0 = Off, 1 = On |
 | detect | Detect | 0 = Off, 1 = On |
@@ -169,10 +187,10 @@ Each message carries the same value its inlet takes, so a State message can go s
 
 ## <a name="Example"></a>Example Patch
 
-Open _br.freeze.partials.example.1.3.maxpat (keep it in the same folder as the abstraction). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
+Open _br.freeze.partials.example.1.4.maxpat (keep it in the same folder as the abstraction). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
 
 - **Source:** the demo tone (a saw at 110 Hz on the left and 165 Hz on the right) is on when the patch opens; turn on the mic / line in 1 + 2 toggle to use your own sound.
-- **Freeze:** click Freeze on the panel, then try X-Fade, Detect, Pitch, Drive, Thresh and Dry/Wet.
+- **Freeze:** click Freeze on the panel, then try X-Fade, Detect, Pitch, Drive, Thresh, Dry/Wet, Speed and Depth.
 - **Levels:** draw on the multislider to set the level of each partial, lowest on the left.
 - **CPU:** switch Freeze.Partials off and watch the CPU readout drop to about 0.
 - **State outlet tab:** the numbers follow every setting as you change it on the panel.
@@ -183,4 +201,4 @@ br.freeze.partials uses **sigmund~** (sinusoidal analysis and pitch tracking) by
 
 ## <a name="Credits"></a>Credits
 
-Partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, "Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan.
+Partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, "Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, wobble, crossfade, detect and panel are by Brian Riordan.
