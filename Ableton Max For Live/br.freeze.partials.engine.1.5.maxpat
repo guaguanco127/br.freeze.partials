@@ -1,6 +1,6 @@
 {
  "patcher": {
-  "description": "br.freeze.partials.engine.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan.",
+  "description": "br.freeze.partials.engine.1.5 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan.",
   "fileversion": 1,
   "appversion": {
    "major": 9,
@@ -25,7 +25,7 @@
       520.0,
       120.0
      ],
-     "text": "br.freeze.partials.engine.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan.",
+     "text": "br.freeze.partials.engine.1.5 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan.",
      "linecount": 6
     }
    },
@@ -863,7 +863,7 @@
        },
        {
         "box": {
-         "filename": "br.freeze.partials.sort.1.1.js",
+         "filename": "br.freeze.partials.sort.1.5.js",
          "fontname": "Arial",
          "fontsize": 12.0,
          "id": "obj-13",
@@ -883,9 +883,9 @@
          "saved_object_attributes": {
           "parameter_enable": 0
          },
-         "text": "v8 br.freeze.partials.sort.1.1.js",
+         "text": "v8 br.freeze.partials.sort.1.5.js",
          "textfile": {
-          "filename": "br.freeze.partials.sort.1.1.js",
+          "filename": "br.freeze.partials.sort.1.5.js",
           "flags": 0,
           "embed": 0,
           "autowatch": 1
@@ -1052,7 +1052,7 @@
           233.0,
           22.0
          ],
-         "text": "poly~ br.freeze.partials.voice.1.2 32"
+         "text": "poly~ br.freeze.partials.voice.1.5 32"
         }
        },
        {
@@ -1598,7 +1598,7 @@
      ],
      "fontname": "Arial",
      "fontsize": 12.0,
-     "text": "br.freeze.partials engine 1.2: one side (no panel). Used twice by br.freeze.partials.1.4 (L and R). poly~ 32 = two banks of 16 voices; the sorter alternates banks for crossfades."
+     "text": "br.freeze.partials engine 1.2: one side (no panel). Used twice by br.freeze.partials.1.5 (L and R). poly~ 32 = two banks of 16 voices; the sorter alternates banks for crossfades."
     }
    },
    {

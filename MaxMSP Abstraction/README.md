@@ -1,5 +1,5 @@
 # Max/MSP Abstractions:   
-## br.freeze.partials.1.4
+## br.freeze.partials.1.5
 
 
 
@@ -8,13 +8,14 @@ guaguanco127 [at] gmail [dot] com
 brianriordanmusic [at] gmail [dot] com  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.freeze.partials.1.4, with all related files, can be found here: [https://github.com/guaguanco127/br.freeze.partials](https://github.com/guaguanco127/br.freeze.partials)  
+Repository for br.freeze.partials.1.5, with all related files, can be found here: [https://github.com/guaguanco127/br.freeze.partials](https://github.com/guaguanco127/br.freeze.partials)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 These files were created with Max 9. 
 
 ## Table of Contents 
 
+[What's New in 1.5](#whats-new-in-15)  
 [What's New in 1.4](#whats-new-in-14)  
 [What's New in 1.3](#whats-new-in-13)  
 [What's New in 1.2](#whats-new-in-12)  
@@ -27,6 +28,11 @@ These files were created with Max 9.
 [Example Patch](#Example)  
 [sigmund~](#sigmund)  
  
+## What's New in 1.5
+
+- **Frozen Max for Live device.** The device now carries its helper files inside it, so copying the .amxd alone is enough.
+- **One version number.** Every file in this repository is now 1.5, including the helper files. Nothing changed in the sound.
+
 ## What's New in 1.4
 
 - **Speed and Depth dials for the wobble.** Every partial slowly fades up and down on its own. **Speed** (0.003 - 1 Hz) sets the fastest a partial can move: each voice picks its own random rate between a third of Speed and Speed, so the chord never pulses in time or in phase. Turn it down for drifts that take minutes. **Depth** (0 - 100 %) sets how far the partials fade: 0 holds them steady, 50 % is the familiar 25 - 75 % breathing, 100 % lets a partial fade almost to silence. The defaults (0.15 Hz, 50 %) sound exactly like 1.3.
@@ -107,19 +113,19 @@ By saving your logic in an abstraction, you can create modules that can be used 
 1. Make sure you have Max 9 installed in your computer. And, make sure you are using a Max patch that is inside of a folder.  
 
 2. Copy and paste ALL of the files in this folder inside of the same folder as the Max patch you are using. br.freeze.partials needs all of them:
-   - br.freeze.partials.1.4.maxpat (the abstraction)
-   - br.freeze.partials.engine.1.2.maxpat (one side's engine, used twice)
-   - br.freeze.partials.voice.1.2.maxpat (one voice)
-   - br.freeze.partials.sort.1.1.js (sorts the partials, applies the Threshold and the crossfade)
+   - br.freeze.partials.1.5.maxpat (the abstraction)
+   - br.freeze.partials.engine.1.5.maxpat (one side's engine, used twice)
+   - br.freeze.partials.voice.1.5.maxpat (one voice)
+   - br.freeze.partials.sort.1.5.js (sorts the partials, applies the Threshold and the crossfade)
    - sigmund~.mxo (Mac) and sigmund~.mxe64 (Windows), with sigmund~ LICENSE.txt
 
 3. To use the built-in controls, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the abstraction located within the same folder as your project. Size the bpatcher to 432 x 84 to show all of the controls.
 
-4. Alternatively, create an object with the abstraction's name ([br.freeze.partials.1.4], do not include brackets) and control it through its inlets (see below).
+4. Alternatively, create an object with the abstraction's name ([br.freeze.partials.1.5], do not include brackets) and control it through its inlets (see below).
 
 **Mac:** a downloaded external may be blocked the first time it loads. If Max says it can't load sigmund~, allow it in System Settings > Privacy & Security, then restart Max.
 
-**Updating from 1.3:** 1.4 adds Speed (inlet 11) and Depth (inlet 12), so Threshold, On/Off, Detect, Mode and Levels move down two places: re-connect anything patched into those. Replace br.freeze.partials.1.3.maxpat with br.freeze.partials.1.4.maxpat, and the engine and voice files with their 1.2 versions (the sorter stays 1.1). Resize your bpatcher to 432 x 84.
+**Updating from 1.3:** 1.4 adds Speed (inlet 11) and Depth (inlet 12), so Threshold, On/Off, Detect, Mode and Levels move down two places: re-connect anything patched into those. Replace br.freeze.partials.1.3.maxpat with br.freeze.partials.1.5.maxpat, and the engine and voice files with their 1.2 versions (the sorter stays 1.1). Resize your bpatcher to 432 x 84.
 
 **Updating from 1.2:** 1.3 only renames Mix Mode to Thru / Aux (same numbers, same default); every inlet and outlet is unchanged. Replace br.freeze.partials.1.2.maxpat with br.freeze.partials.1.3.maxpat; the engine, voice and sorter files stay the same.
 
@@ -187,7 +193,7 @@ Each message carries the same value its inlet takes, so a State message can go s
 
 ## <a name="Example"></a>Example Patch
 
-Open _br.freeze.partials.example.1.4.maxpat (keep it in the same folder as the abstraction). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
+Open _br.freeze.partials.example.1.5.maxpat (keep it in the same folder as the abstraction). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
 
 - **Source:** the demo tone (a saw at 110 Hz on the left and 165 Hz on the right) is on when the patch opens; turn on the mic / line in 1 + 2 toggle to use your own sound.
 - **Freeze:** click Freeze on the panel, then try X-Fade, Detect, Pitch, Drive, Thresh, Dry/Wet, Speed and Depth.

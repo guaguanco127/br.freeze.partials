@@ -10,7 +10,7 @@
         },
         "classnamespace": "box",
         "rect": [ 134.0, 157.0, 1149.0, 756.0 ],
-        "description": "_br.freeze.partials.example.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan.",
+        "description": "_br.freeze.partials.example.1.5 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan.",
         "showontab": 1,
         "boxes": [
             {
@@ -21,7 +21,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 225.0, 414.0, 634.0, 87.0 ],
-                    "text": "_br.freeze.partials.example.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan."
+                    "text": "_br.freeze.partials.example.1.5 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: partial tracking by sigmund~ (Miller Puckette; 64-bit Max port by Volker Böhm; builds from Isabel Kaspriskie's mp-objects), see sigmund~ CREDITS.md. Wavefolding uses antiderivative anti-aliasing (Parker, Zavalishin & Le Bivic, \"Reducing the Aliasing of Nonlinear Waveshaping Using Continuous-Time Convolution\", DAFx-16, 2016), in the style of the Buchla 259. The freeze engine, voices, crossfade, detect and panel are by Brian Riordan."
                 }
             },
             {
@@ -249,7 +249,7 @@
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
                     "maxclass": "bpatcher",
-                    "name": "br.freeze.partials.1.4.maxpat",
+                    "name": "br.freeze.partials.1.5.maxpat",
                     "numinlets": 17,
                     "numoutlets": 3,
                     "offset": [ 0.0, 0.0 ],
@@ -354,7 +354,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 225.0, 535.0, 377.0, 87.0 ],
-                    "text": "Keep every file from this folder together, next to your patch: br.freeze.partials.1.4.maxpat, br.freeze.partials.engine.1.2.maxpat, br.freeze.partials.voice.1.2.maxpat, br.freeze.partials.sort.1.1.js, plus sigmund~ (Mac .mxo, Windows .mxe64) and its license. Mac: if sigmund~ is blocked the first time, allow it in System Settings > Privacy & Security. Hover over an inlet for its range and default."
+                    "text": "Keep every file from this folder together, next to your patch: br.freeze.partials.1.5.maxpat, br.freeze.partials.engine.1.5.maxpat, br.freeze.partials.voice.1.5.maxpat, br.freeze.partials.sort.1.5.js, plus sigmund~ (Mac .mxo, Windows .mxe64) and its license. Mac: if sigmund~ is blocked the first time, allow it in System Settings > Privacy & Security. Hover over an inlet for its range and default."
                 }
             },
             {

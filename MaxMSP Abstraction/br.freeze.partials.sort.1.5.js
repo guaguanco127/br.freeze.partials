@@ -1,4 +1,4 @@
-// br.freeze.partials.sort.1.1.js
+// br.freeze.partials.sort.1.5.js
 // Sits between sigmund~ (tracks output) and the br.freeze.partials poly~ voices (32 = two banks of 16).
 // Stores the latest "index freq amp flag" for each track. On bang (Freeze):
 //   - tracks quieter than the threshold count as empty, so no voice turns on for them

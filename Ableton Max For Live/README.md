@@ -1,17 +1,18 @@
-# Ableton Max for Live device: br.freeze.partials.1.4  
+# Ableton Max for Live device: br.freeze.partials.1.5  
    
 By Brian Riordan  
 guaguanco127 [at] gmail [dot] com  
 brianriordanmusic [at] gmail [dot] com  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.freeze.partials.1.4, with all related files, can be found here: [https://github.com/guaguanco127/br.freeze.partials](https://github.com/guaguanco127/br.freeze.partials)  
+Repository for br.freeze.partials.1.5, with all related files, can be found here: [https://github.com/guaguanco127/br.freeze.partials](https://github.com/guaguanco127/br.freeze.partials)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 These files were created with Max 9. 
 
 ## Table of Contents 
 
+[What's New in 1.5](#whats-new-in-15)  
 [What's New in 1.4](#whats-new-in-14)  
 [What's New in 1.3](#whats-new-in-13)  
 [What's New in 1.1](#whats-new-in-11)  
@@ -19,6 +20,11 @@ These files were created with Max 9.
 [What is a Max for Live Device?](#M4L)  
 [How To Install](#Install)  
 [sigmund~](#sigmund)  
+
+## What's New in 1.5
+
+- **Frozen Max for Live device.** The device now carries its helper files inside it, so copying the .amxd alone is enough.
+- **One version number.** Every file in this repository is now 1.5, including the helper files. Nothing changed in the sound.
 
 ## What's New in 1.4
 
@@ -94,11 +100,11 @@ Max For Live brings the power and flexibility of Max to Ableton Live. Max For Li
 2. For Macintosh:  
 Go to your user folder  
 Then Music > Ableton > User Library > Presets > Audio Effects > Max Audio Effect  
-Copy and paste br.freeze.partials.1.4.amxd into that folder
+Copy and paste br.freeze.partials.1.5.amxd into that folder
 
 3. For Windows: \Users\[username]\Documents\Ableton\User Library\Presets\Audio Effects\Max Audio Effect  
 
-4. Also copy ALL of the other files from this folder into the same folder: br.freeze.partials.engine.1.2.maxpat, br.freeze.partials.voice.1.2.maxpat, br.freeze.partials.sort.1.1.js, sigmund~.mxo (Mac), sigmund~.mxe64 (Windows) and sigmund~ LICENSE.txt. **The device will not work without them.**    
+4. Also copy the sigmund~ files from this folder into the same folder: sigmund~.mxo (Mac), sigmund~.mxe64 (Windows) and sigmund~ LICENSE.txt. The device itself is frozen (its own helper files are inside it), but keep the external next to it.  
   
 5. Open Ableton Live. On the left-hand side, look for Max for Live > Max Audio Effect and then the name of this device.
 
@@ -111,6 +117,7 @@ Copy and paste br.freeze.partials.1.4.amxd into that folder
 br.freeze.partials uses **sigmund~** (sinusoidal analysis and pitch tracking) by **Miller Puckette**, with 32-bit Max ports by Ted Apel, Barry Threw and David Zicarelli, 64-bit Max ports by Volker Böhm, and the Mac (Intel + Apple Silicon) and Windows builds from Isabel Kaspriskie's [mp-objects](https://github.com/isabelgk/mp-objects) package. It is included here under its Standard Improved BSD License (sigmund~ LICENSE.txt). See sigmund~ CREDITS.md for details. If you already have sigmund~ installed, Max may warn about two copies; it still works, and you can delete the one in this folder.
 
 ## <a name="Version"></a>Version History  
+Version 1.5 (10-21-2026) froze the Max for Live device and gave every file in the repository the same version number.  
 Version 1.4: Speed and Depth dials for the wobble.  
 Version 1.3: Mix Mode renamed to Thru / Aux.  
 Version 1.1: first Max for Live release (stereo, crossfade, attack detect, Dry/Wet, Insert/Gate, Levels).
