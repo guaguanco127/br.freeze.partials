@@ -27,7 +27,7 @@ These files were created with Max 9.
 
 ## What's New in 1.5
 
-- **Frozen Max for Live device.** The device now carries its helper files inside it, so copying the .amxd alone is enough.
+- **Frozen Max for Live device.** The device now carries its helper files and the sigmund~ external inside it, so copying the .amxd alone is enough.
 - **One version number.** Every file in this repository is now 1.5, including the helper files. Nothing changed in the sound.
 - **Live 12 only:** the device needs Max 9 (it uses v8), so it does not run in Live 11.
 

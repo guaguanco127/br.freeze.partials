@@ -23,7 +23,7 @@ These files were created with Max 9.
 
 ## What's New in 1.5
 
-- **Frozen Max for Live device.** The device now carries its helper files inside it, so copying the .amxd alone is enough.
+- **Frozen Max for Live device.** The device now carries its helper files and the sigmund~ external inside it, so copying the .amxd alone is enough.
 - **One version number.** Every file in this repository is now 1.5, including the helper files. Nothing changed in the sound.
 - **Live 12 only:** the device needs Max 9 (it uses v8), so it does not run in Live 11.
 
@@ -107,11 +107,11 @@ Copy and paste br.freeze.partials.1.5.amxd into that folder
 
 3. For Windows: \Users\[username]\Documents\Ableton\User Library\Presets\Audio Effects\Max Audio Effect  
 
-4. Also copy the sigmund~ files from this folder into the same folder: sigmund~.mxo (Mac), sigmund~.mxe64 (Windows) and sigmund~ LICENSE.txt. The device itself is frozen (its own helper files are inside it), but keep the external next to it.  
-  
-5. Open Ableton Live. On the left-hand side, look for Max for Live > Max Audio Effect and then the name of this device.
+4. Open Ableton Live. On the left-hand side, look for Max for Live > Max Audio Effect and then the name of this device.
 
-6. Either double click on the device, or drag/drop it onto the track where you wish to use it.
+5. Either double click on the device, or drag/drop it onto the track where you wish to use it.
+
+**The device is frozen:** the engine, voice and sorter, and the sigmund~ external for Mac and Windows, are inside the .amxd, so no other files are needed. sigmund~ LICENSE.txt and CREDITS.md stay in this folder with the external's license.
 
 **Mac:** a downloaded external may be blocked the first time it loads. If the device says it can't load sigmund~, allow it in System Settings > Privacy & Security, then restart Live.
 
