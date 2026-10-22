@@ -32,6 +32,7 @@ These files were created with Max 9.
 
 - **Frozen Max for Live device.** The device now carries its helper files inside it, so copying the .amxd alone is enough.
 - **One version number.** Every file in this repository is now 1.5, including the helper files. Nothing changed in the sound.
+- **Max 9:** the abstraction uses v8, so it needs Max 9.
 
 ## What's New in 1.4
 

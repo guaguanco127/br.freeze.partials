@@ -25,6 +25,7 @@ These files were created with Max 9.
 
 - **Frozen Max for Live device.** The device now carries its helper files inside it, so copying the .amxd alone is enough.
 - **One version number.** Every file in this repository is now 1.5, including the helper files. Nothing changed in the sound.
+- **Live 12 only:** the device needs Max 9 (it uses v8), so it does not run in Live 11.
 
 ## What's New in 1.4
 
@@ -94,6 +95,8 @@ Every control is a Live parameter (automatable and saved with your set), except 
 Max For Live brings the power and flexibility of Max to Ableton Live. Max For Live gives you access to hundreds of exclusive custom plug-ins (Live Devices) as well as the tools to build your own. These can be MIDI and audio effects, audio and video synthesizers, 3D Jitter visuals, as well as tools that interact with the Live application itself, via the Live API.
 
 ## <a name="Install"></a>How To Install
+
+**Needs Live 12 (Max 9):** the device uses the v8 JavaScript object, which Live 11's Max (8.5 or 8.6) does not have.
 
 1. Make sure you have the Ableton Live Suite installed in your computer. Make sure Ableton is turned off while installing. 
 

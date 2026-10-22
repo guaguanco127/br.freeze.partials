@@ -29,6 +29,7 @@ These files were created with Max 9.
 
 - **Frozen Max for Live device.** The device now carries its helper files inside it, so copying the .amxd alone is enough.
 - **One version number.** Every file in this repository is now 1.5, including the helper files. Nothing changed in the sound.
+- **Live 12 only:** the device needs Max 9 (it uses v8), so it does not run in Live 11.
 
 ## What's New in 1.4
 
@@ -63,6 +64,8 @@ These files were created with Max 9.
 - The voice engine is now its own file (br.freeze.partials.engine.1.1.maxpat), used once per side. Copy all of the files.
 
 ## <a name="About"></a>About
+
+**Needs Live 12 (Max 9):** the device uses the v8 JavaScript object, which Live 11's Max (8.5 or 8.6) does not have.
 
 A spectral-style freeze for Max/MSP and Max for Live: it tracks the partials of live input and holds them as a bank of 16 sine voices per side with Buchla-style folding and per-partial mix.
 
